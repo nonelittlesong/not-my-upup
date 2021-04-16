@@ -11,66 +11,33 @@
   <link rel="stylesheet" href="stylesheets/fonts.css" media="screen" />
   <link rel="stylesheet" href="stylesheets/style.css" media="screen" />
   <script src='javascripts/jquery.js' type='text/javascript'></script>
-  <script>
-  document.domain = "gumgem.com";
-  $().ready (function () {
-    // a.bg-block 调整背景色，a.button-sharp 调整尺寸，#save img 刷新图片
-    $('a.bg-block, a.button-sharp, #save img').click (function (e) { $('#output, .sth').show(); });
-    // #words 输入文字时生成图片
-    $('#words').keydown (function (e) { $('#output, .sth').show (); });
-    // todo
-    $('body').click (function () { $('#pop_play', window.parent.document).hide(); });
-    $('.wrapper').click (function (e) { e.stopPropagation () });
-  })
-  </script>
   <script src='javascripts/jquery.scrollTo.min.js' type='text/javascript'></script>
+  <!-- 检测浏览器特性 -->
   <script src='javascripts/modernizr.custom.js' type='text/javascript'></script>
+  <!-- 将 binary base64 解码为 ArrayBuffer 或 Uint8Array -->
   <script src='javascripts/binary.js' type='text/javascript'></script>
-  <!-- 自定义代码 -->
-  <script src='javascripts/stuff.js' type='text/javascript'></script>
 </head>
+
 <body>
 <!--auto_root_box_st-->
 <div id="auto_root_box">
-    <div class="wrapper main">
-      <h1>
-        <img src="materials/logo.png" alt="UPUP 舉牌加油小人產生器 - Haniboi" width="280" />
-      </h1>
-      <h3 data-lang="your_message_here">YOUR MESSAGE HERE</h3>
-      <textarea id="words" placeholder="寫些想說的話...用空白、斷行排列小人！"></textarea>
-      <h3 data-lang="background_colors">BACKGROUND COLORS</h3>
-      <a data-color="#E50012" class="bg-block"></a>
-      <a data-color="#EA5415" class="bg-block"></a>
-      <a data-color="#f49ec0" class="bg-block"></a>
-      <a data-color="#f6f08b" class="bg-block"></a>
-      <a data-color="#c1d540" class="bg-block"></a>
-      <a data-color="#60c3ba" class="bg-block"></a>
-      <a data-color="#77cff0" class="bg-block"></a>
-      <a data-color="#980c7e" class="bg-block"></a>
-      <br />
-      <h3 class="inline">SIZE</h3>
-      <a class="button-sharp" data-size="facebook" data-lang="facebook_cover">FACEBOOK COVER</a>
-      <a class="button-sharp" data-size="square" data-lang="square">SQUARE</a>
-      <br />
-      <div id="save" class="inline">
-        <img src="materials/refresh.png" alt="refresh" />
-        <img src="materials/make.png" alt="make" /><br />
-      </div>
-      <img id="output" style="display: none;"/>
-
-      <div class="sth" style="display: none;">
-        <a id="download" class="button green" download="upup.jpg" target="_blank" data-lang="download_this_pic">DOWNLOAD THIS PIC</a>
-        <h3 class="inline" data-lang="or_share_it_on"> or share it on</h3>
-        <br />
-        <a id="fb-upload" class="button image" target="_blank"><img src="materials/facebook.png" alt="share on facebook" /></a>
-      </div>
-
-      <canvas width="850" height="315" id="canvas-bg"></canvas>
-      <canvas width="850" height="315" id="canvas-people"></canvas>
-      <canvas width="850" height="315" id="canvas-text"></canvas>
-      <canvas width="850" height="315" id="canvas-mark"></canvas>
-    </div>
+  <div class="wrapper main">
+    <img id="output" style="display: none;"/>
+    <canvas width="850" height="315" id="canvas-bg"></canvas>
+    <canvas width="850" height="315" id="canvas-people"></canvas>
+    <canvas width="850" height="315" id="canvas-text"></canvas>
+    <canvas width="850" height="315" id="canvas-mark"></canvas>
+  </div>
 </div>
 <!--auto_root_box_end-->
+
+<!-- 逻辑代码实现 -->
+<script src='javascripts/stuff.js' type='text/javascript'></script>
+<script>
+document.domain = "gumgem.com";
+$().ready (function () {
+  
+});
+</script>
 </body>
 </html>
